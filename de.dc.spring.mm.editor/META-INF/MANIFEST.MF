@@ -13,5 +13,9 @@ Export-Package: de.dc.spring.mm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  de.dc.spring.mm.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.eclipse.emf.edit.ui;visibility:=reexport
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro
 Bundle-ActivationPolicy: lazy

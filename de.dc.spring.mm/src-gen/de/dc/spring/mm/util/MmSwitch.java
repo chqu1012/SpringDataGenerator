@@ -87,6 +87,52 @@ public class MmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case MmPackage.MAPPING: {
+			Mapping mapping = (Mapping) theEObject;
+			T result = caseMapping(mapping);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.MAPPING_TYPE: {
+			MappingType mappingType = (MappingType) theEObject;
+			T result = caseMappingType(mappingType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.ONE_TO_MANY: {
+			OneToMany oneToMany = (OneToMany) theEObject;
+			T result = caseOneToMany(oneToMany);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.MANY_TO_MANY: {
+			ManyToMany manyToMany = (ManyToMany) theEObject;
+			T result = caseManyToMany(manyToMany);
+			if (result == null)
+				result = caseMappingType(manyToMany);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.ONE_TO_ONE: {
+			OneToOne oneToOne = (OneToOne) theEObject;
+			T result = caseOneToOne(oneToOne);
+			if (result == null)
+				result = caseMappingType(oneToOne);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.MANY_TO_ONE: {
+			ManyToOne manyToOne = (ManyToOne) theEObject;
+			T result = caseManyToOne(manyToOne);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case MmPackage.FIELD: {
 			Field field = (Field) theEObject;
 			T result = caseField(field);
@@ -148,6 +194,96 @@ public class MmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMapping(Mapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMappingType(MappingType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>One To Many</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>One To Many</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOneToMany(OneToMany object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Many To Many</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Many To Many</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseManyToMany(ManyToMany object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>One To One</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>One To One</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOneToOne(OneToOne object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Many To One</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Many To One</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseManyToOne(ManyToOne object) {
 		return null;
 	}
 

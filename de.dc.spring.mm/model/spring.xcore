@@ -22,7 +22,37 @@ class Entity{
 	String name
 	boolean generateRepository = 'true'
 	contains Field[0..*] fields
+	contains Mapping[0..*] mapping
 }
+
+class Mapping{
+	String name
+	refers Entity entity
+	boolean isList = 'true'
+	contains MappingType mappingType
+}
+
+abstract class MappingType{}
+
+class OneToMany{}
+
+class ManyToMany extends MappingType{
+	Cascade cascade = 'ALL'
+	String joinTableName
+	String joinColumns
+	String inverseJoinColumns
+	refers Entity mappedBy
+}
+
+class OneToOne extends MappingType{
+	
+}
+
+enum Cascade{
+	ALL
+}
+
+class ManyToOne{}
 
 class Field{
 	boolean isId = 'false'

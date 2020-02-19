@@ -49,6 +49,51 @@ public interface MmFactory extends EFactory {
 	Entity createEntity();
 
 	/**
+	 * Returns a new object of class '<em>Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping</em>'.
+	 * @generated
+	 */
+	Mapping createMapping();
+
+	/**
+	 * Returns a new object of class '<em>One To Many</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>One To Many</em>'.
+	 * @generated
+	 */
+	OneToMany createOneToMany();
+
+	/**
+	 * Returns a new object of class '<em>Many To Many</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Many To Many</em>'.
+	 * @generated
+	 */
+	ManyToMany createManyToMany();
+
+	/**
+	 * Returns a new object of class '<em>One To One</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>One To One</em>'.
+	 * @generated
+	 */
+	OneToOne createOneToOne();
+
+	/**
+	 * Returns a new object of class '<em>Many To One</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Many To One</em>'.
+	 * @generated
+	 */
+	ManyToOne createManyToOne();
+
+	/**
 	 * Returns a new object of class '<em>Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +110,26 @@ public interface MmFactory extends EFactory {
 	 * @generated
 	 */
 	DBSource createDBSource();
+
+	/**
+	 * Returns an instance of data type '<em>Cascade</em>' corresponding the given literal.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param literal a literal of the data type.
+	 * @return a new instance value of the data type.
+	 * @generated
+	 */
+	Cascade createCascade(String literal);
+
+	/**
+	 * Returns a literal representation of an instance of data type '<em>Cascade</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param instanceValue an instance value of the data type.
+	 * @return a literal representation of the instance value.
+	 * @generated
+	 */
+	String convertCascade(Cascade instanceValue);
 
 	/**
 	 * Returns the package supported by this factory.

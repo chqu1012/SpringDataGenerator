@@ -5,6 +5,7 @@ package de.dc.spring.mm.impl;
 import de.dc.spring.mm.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -61,12 +62,52 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 			return createRestController();
 		case MmPackage.ENTITY:
 			return createEntity();
+		case MmPackage.MAPPING:
+			return createMapping();
+		case MmPackage.ONE_TO_MANY:
+			return createOneToMany();
+		case MmPackage.MANY_TO_MANY:
+			return createManyToMany();
+		case MmPackage.ONE_TO_ONE:
+			return createOneToOne();
+		case MmPackage.MANY_TO_ONE:
+			return createManyToOne();
 		case MmPackage.FIELD:
 			return createField();
 		case MmPackage.DB_SOURCE:
 			return createDBSource();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+		case MmPackage.CASCADE:
+			return createCascadeFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+		case MmPackage.CASCADE:
+			return convertCascadeToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -109,6 +150,61 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 	 * @generated
 	 */
 	@Override
+	public Mapping createMapping() {
+		MappingImpl mapping = new MappingImpl();
+		return mapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public OneToMany createOneToMany() {
+		OneToManyImpl oneToMany = new OneToManyImpl();
+		return oneToMany;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ManyToMany createManyToMany() {
+		ManyToManyImpl manyToMany = new ManyToManyImpl();
+		return manyToMany;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public OneToOne createOneToOne() {
+		OneToOneImpl oneToOne = new OneToOneImpl();
+		return oneToOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ManyToOne createManyToOne() {
+		ManyToOneImpl manyToOne = new ManyToOneImpl();
+		return manyToOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Field createField() {
 		FieldImpl field = new FieldImpl();
 		return field;
@@ -123,6 +219,48 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 	public DBSource createDBSource() {
 		DBSourceImpl dbSource = new DBSourceImpl();
 		return dbSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Cascade createCascade(String literal) {
+		Cascade result = Cascade.get(literal);
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + literal + "' is not a valid enumerator of '"
+					+ MmPackage.Literals.CASCADE.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cascade createCascadeFromString(EDataType eDataType, String initialValue) {
+		return createCascade(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertCascade(Cascade instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCascadeToString(EDataType eDataType, Object instanceValue) {
+		return convertCascade((Cascade) instanceValue);
 	}
 
 	/**

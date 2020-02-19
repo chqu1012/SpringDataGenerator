@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dc.spring.mm.Entity#getName <em>Name</em>}</li>
  *   <li>{@link de.dc.spring.mm.Entity#isGenerateRepository <em>Generate Repository</em>}</li>
  *   <li>{@link de.dc.spring.mm.Entity#getFields <em>Fields</em>}</li>
+ *   <li>{@link de.dc.spring.mm.Entity#getMapping <em>Mapping</em>}</li>
  * </ul>
  *
  * @see de.dc.spring.mm.MmPackage#getEntity()
@@ -104,5 +105,17 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	EList<Field> getFields();
+
+	/**
+	 * Returns the value of the '<em><b>Mapping</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dc.spring.mm.Mapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mapping</em>' containment reference list.
+	 * @see de.dc.spring.mm.MmPackage#getEntity_Mapping()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Mapping> getMapping();
 
 } // Entity

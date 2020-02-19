@@ -4,6 +4,7 @@ package de.dc.spring.mm.impl;
 
 import de.dc.spring.mm.Entity;
 import de.dc.spring.mm.Field;
+import de.dc.spring.mm.Mapping;
 import de.dc.spring.mm.MmPackage;
 
 import java.util.Collection;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dc.spring.mm.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.dc.spring.mm.impl.EntityImpl#isGenerateRepository <em>Generate Repository</em>}</li>
  *   <li>{@link de.dc.spring.mm.impl.EntityImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link de.dc.spring.mm.impl.EntityImpl#getMapping <em>Mapping</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,6 +100,16 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected EList<Field> fields;
+
+	/**
+	 * The cached value of the '{@link #getMapping() <em>Mapping</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMapping()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Mapping> mapping;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,10 +238,25 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @generated
 	 */
 	@Override
+	public EList<Mapping> getMapping() {
+		if (mapping == null) {
+			mapping = new EObjectContainmentEList<Mapping>(Mapping.class, this, MmPackage.ENTITY__MAPPING);
+		}
+		return mapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case MmPackage.ENTITY__FIELDS:
 			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+		case MmPackage.ENTITY__MAPPING:
+			return ((InternalEList<?>) getMapping()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -252,6 +279,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return isGenerateRepository();
 		case MmPackage.ENTITY__FIELDS:
 			return getFields();
+		case MmPackage.ENTITY__MAPPING:
+			return getMapping();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -278,6 +307,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			getFields().clear();
 			getFields().addAll((Collection<? extends Field>) newValue);
 			return;
+		case MmPackage.ENTITY__MAPPING:
+			getMapping().clear();
+			getMapping().addAll((Collection<? extends Mapping>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -302,6 +335,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		case MmPackage.ENTITY__FIELDS:
 			getFields().clear();
 			return;
+		case MmPackage.ENTITY__MAPPING:
+			getMapping().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -322,6 +358,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			return generateRepository != GENERATE_REPOSITORY_EDEFAULT;
 		case MmPackage.ENTITY__FIELDS:
 			return fields != null && !fields.isEmpty();
+		case MmPackage.ENTITY__MAPPING:
+			return mapping != null && !mapping.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

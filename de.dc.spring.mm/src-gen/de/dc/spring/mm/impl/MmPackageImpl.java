@@ -2,16 +2,24 @@
  */
 package de.dc.spring.mm.impl;
 
+import de.dc.spring.mm.Cascade;
 import de.dc.spring.mm.DBSource;
 import de.dc.spring.mm.Entity;
 import de.dc.spring.mm.Field;
+import de.dc.spring.mm.ManyToMany;
+import de.dc.spring.mm.ManyToOne;
+import de.dc.spring.mm.Mapping;
+import de.dc.spring.mm.MappingType;
 import de.dc.spring.mm.MmFactory;
 import de.dc.spring.mm.MmPackage;
+import de.dc.spring.mm.OneToMany;
+import de.dc.spring.mm.OneToOne;
 import de.dc.spring.mm.RestController;
 import de.dc.spring.mm.SpringProject;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -51,6 +59,48 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass mappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mappingTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass oneToManyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass manyToManyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass oneToOneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass manyToOneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass fieldEClass = null;
 
 	/**
@@ -59,6 +109,13 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	private EClass dbSourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum cascadeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -262,6 +319,166 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEntity_Mapping() {
+		return (EReference) entityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMapping() {
+		return mappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMapping_Name() {
+		return (EAttribute) mappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMapping_Entity() {
+		return (EReference) mappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMapping_IsList() {
+		return (EAttribute) mappingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMapping_MappingType() {
+		return (EReference) mappingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMappingType() {
+		return mappingTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOneToMany() {
+		return oneToManyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getManyToMany() {
+		return manyToManyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getManyToMany_Cascade() {
+		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getManyToMany_JoinTableName() {
+		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getManyToMany_JoinColumns() {
+		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getManyToMany_InverseJoinColumns() {
+		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getManyToMany_MappedBy() {
+		return (EReference) manyToManyEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOneToOne() {
+		return oneToOneEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getManyToOne() {
+		return manyToOneEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getField() {
 		return fieldEClass;
 	}
@@ -392,6 +609,16 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getCascade() {
+		return cascadeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MmFactory getMmFactory() {
 		return (MmFactory) getEFactoryInstance();
 	}
@@ -431,6 +658,28 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		createEAttribute(entityEClass, ENTITY__NAME);
 		createEAttribute(entityEClass, ENTITY__GENERATE_REPOSITORY);
 		createEReference(entityEClass, ENTITY__FIELDS);
+		createEReference(entityEClass, ENTITY__MAPPING);
+
+		mappingEClass = createEClass(MAPPING);
+		createEAttribute(mappingEClass, MAPPING__NAME);
+		createEReference(mappingEClass, MAPPING__ENTITY);
+		createEAttribute(mappingEClass, MAPPING__IS_LIST);
+		createEReference(mappingEClass, MAPPING__MAPPING_TYPE);
+
+		mappingTypeEClass = createEClass(MAPPING_TYPE);
+
+		oneToManyEClass = createEClass(ONE_TO_MANY);
+
+		manyToManyEClass = createEClass(MANY_TO_MANY);
+		createEAttribute(manyToManyEClass, MANY_TO_MANY__CASCADE);
+		createEAttribute(manyToManyEClass, MANY_TO_MANY__JOIN_TABLE_NAME);
+		createEAttribute(manyToManyEClass, MANY_TO_MANY__JOIN_COLUMNS);
+		createEAttribute(manyToManyEClass, MANY_TO_MANY__INVERSE_JOIN_COLUMNS);
+		createEReference(manyToManyEClass, MANY_TO_MANY__MAPPED_BY);
+
+		oneToOneEClass = createEClass(ONE_TO_ONE);
+
+		manyToOneEClass = createEClass(MANY_TO_ONE);
 
 		fieldEClass = createEClass(FIELD);
 		createEAttribute(fieldEClass, FIELD__IS_ID);
@@ -446,6 +695,9 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		createEAttribute(dbSourceEClass, DB_SOURCE__PASSWORD);
 		createEAttribute(dbSourceEClass, DB_SOURCE__DRIVE_CLASS_NAME);
 		createEAttribute(dbSourceEClass, DB_SOURCE__SERVER_PORT);
+
+		// Create enums
+		cascadeEEnum = createEEnum(CASCADE);
 	}
 
 	/**
@@ -480,6 +732,8 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		manyToManyEClass.getESuperTypes().add(this.getMappingType());
+		oneToOneEClass.getESuperTypes().add(this.getMappingType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(springProjectEClass, SpringProject.class, "SpringProject", !IS_ABSTRACT, !IS_INTERFACE,
@@ -518,6 +772,53 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		initEReference(getEntity_Fields(), this.getField(), null, "fields", null, 0, -1, Entity.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getEntity_Mapping(), this.getMapping(), null, "mapping", null, 0, -1, Entity.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMapping_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Mapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getMapping_Entity(), this.getEntity(), null, "entity", null, 0, 1, Mapping.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getMapping_IsList(), theEcorePackage.getEBoolean(), "isList", "true", 0, 1, Mapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getMapping_MappingType(), this.getMappingType(), null, "mappingType", null, 0, 1, Mapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mappingTypeEClass, MappingType.class, "MappingType", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(oneToManyEClass, OneToMany.class, "OneToMany", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(manyToManyEClass, ManyToMany.class, "ManyToMany", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getManyToMany_Cascade(), this.getCascade(), "cascade", "ALL", 0, 1, ManyToMany.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getManyToMany_JoinTableName(), theEcorePackage.getEString(), "joinTableName", null, 0, 1,
+				ManyToMany.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getManyToMany_JoinColumns(), theEcorePackage.getEString(), "joinColumns", null, 0, 1,
+				ManyToMany.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getManyToMany_InverseJoinColumns(), theEcorePackage.getEString(), "inverseJoinColumns", null, 0,
+				1, ManyToMany.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getManyToMany_MappedBy(), this.getEntity(), null, "mappedBy", null, 0, 1, ManyToMany.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(oneToOneEClass, OneToOne.class, "OneToOne", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(manyToOneEClass, ManyToOne.class, "ManyToOne", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getField_IsId(), theEcorePackage.getEBoolean(), "isId", "false", 0, 1, Field.class,
@@ -555,6 +856,10 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		initEAttribute(getDBSource_ServerPort(), theEcorePackage.getEString(), "serverPort", "2001", 0, 1,
 				DBSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(cascadeEEnum, Cascade.class, "Cascade");
+		addEEnumLiteral(cascadeEEnum, Cascade.ALL);
 
 		// Create resource
 		createResource(eNS_URI);

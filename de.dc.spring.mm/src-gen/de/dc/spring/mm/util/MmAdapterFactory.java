@@ -82,6 +82,36 @@ public class MmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseMapping(Mapping object) {
+			return createMappingAdapter();
+		}
+
+		@Override
+		public Adapter caseMappingType(MappingType object) {
+			return createMappingTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseOneToMany(OneToMany object) {
+			return createOneToManyAdapter();
+		}
+
+		@Override
+		public Adapter caseManyToMany(ManyToMany object) {
+			return createManyToManyAdapter();
+		}
+
+		@Override
+		public Adapter caseOneToOne(OneToOne object) {
+			return createOneToOneAdapter();
+		}
+
+		@Override
+		public Adapter caseManyToOne(ManyToOne object) {
+			return createManyToOneAdapter();
+		}
+
+		@Override
 		public Adapter caseField(Field object) {
 			return createFieldAdapter();
 		}
@@ -149,6 +179,90 @@ public class MmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.spring.mm.Mapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.spring.mm.Mapping
+	 * @generated
+	 */
+	public Adapter createMappingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.spring.mm.MappingType <em>Mapping Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.spring.mm.MappingType
+	 * @generated
+	 */
+	public Adapter createMappingTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.spring.mm.OneToMany <em>One To Many</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.spring.mm.OneToMany
+	 * @generated
+	 */
+	public Adapter createOneToManyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.spring.mm.ManyToMany <em>Many To Many</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.spring.mm.ManyToMany
+	 * @generated
+	 */
+	public Adapter createManyToManyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.spring.mm.OneToOne <em>One To One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.spring.mm.OneToOne
+	 * @generated
+	 */
+	public Adapter createOneToOneAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dc.spring.mm.ManyToOne <em>Many To One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dc.spring.mm.ManyToOne
+	 * @generated
+	 */
+	public Adapter createManyToOneAdapter() {
 		return null;
 	}
 

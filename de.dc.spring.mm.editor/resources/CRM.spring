@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mm:SpringProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mm="http://www.frateranatis.org/spring" basePackage="de.dc.spring.crm" name="CRM">
+<mm:SpringProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mm="http://www.frateranatis.org/spring" basePackage="de.dc.spring.crm" name="CRM">
   <dbSource/>
   <entities name="BaseEnttiy">
     <fields isId="true" name="id" datatype="Long"/>
@@ -13,6 +13,12 @@
     <fields name="name"/>
     <fields name="password"/>
     <fields name="passwordDuration" datatype="Integer"/>
-    <fields name="passwordDuration" datatype="LocalDate"/>
+    <fields name="passwordExpiration" datatype="java.time.LocalDate"/>
+    <fields name="passwordModifable" datatype="Boolean"/>
+    <fields name="status" datatype="Integer"/>
+    <mapping name="userGroups" entity="//@entities.2">
+      <mappingType xsi:type="mm:ManyToMany" joinTableName="user_usergroups" joinColumns="user_id" inverseJoinColumns="usergroup_id" mappedBy="//@entities.2"/>
+    </mapping>
   </entities>
+  <entities superClass="//@entities.0" name="UserGroup"/>
 </mm:SpringProject>

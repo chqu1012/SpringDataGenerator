@@ -2,7 +2,7 @@
  */
 package de.dc.spring.mm.provider;
 
-import de.dc.spring.mm.Entity;
+import de.dc.spring.mm.Mapping;
 import de.dc.spring.mm.MmFactory;
 import de.dc.spring.mm.MmPackage;
 
@@ -28,12 +28,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.dc.spring.mm.Entity} object.
+ * This is the item provider adapter for a {@link de.dc.spring.mm.Mapping} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider extends ItemProviderAdapter
+public class MappingItemProvider extends ItemProviderAdapter
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
 		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
@@ -42,7 +42,7 @@ public class EntityItemProvider extends ItemProviderAdapter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityItemProvider(AdapterFactory adapterFactory) {
+	public MappingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,26 +57,11 @@ public class EntityItemProvider extends ItemProviderAdapter
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSuperClassPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addGenerateRepositoryPropertyDescriptor(object);
+			addEntityPropertyDescriptor(object);
+			addIsListPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Super Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSuperClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_superClass_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_superClass_feature",
-								"_UI_Entity_type"),
-						MmPackage.Literals.ENTITY__SUPER_CLASS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -88,25 +73,40 @@ public class EntityItemProvider extends ItemProviderAdapter
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_name_feature", "_UI_Entity_type"),
-						MmPackage.Literals.ENTITY__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
+						getResourceLocator(), getString("_UI_Mapping_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Mapping_name_feature", "_UI_Mapping_type"),
+						MmPackage.Literals.MAPPING__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Generate Repository feature.
+	 * This adds a property descriptor for the Entity feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGenerateRepositoryPropertyDescriptor(Object object) {
+	protected void addEntityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_generateRepository_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_generateRepository_feature",
-								"_UI_Entity_type"),
-						MmPackage.Literals.ENTITY__GENERATE_REPOSITORY, true, false, false,
+						getResourceLocator(), getString("_UI_Mapping_entity_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Mapping_entity_feature",
+								"_UI_Mapping_type"),
+						MmPackage.Literals.MAPPING__ENTITY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is List feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsListPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Mapping_isList_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Mapping_isList_feature",
+								"_UI_Mapping_type"),
+						MmPackage.Literals.MAPPING__IS_LIST, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -122,8 +122,7 @@ public class EntityItemProvider extends ItemProviderAdapter
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MmPackage.Literals.ENTITY__FIELDS);
-			childrenFeatures.add(MmPackage.Literals.ENTITY__MAPPING);
+			childrenFeatures.add(MmPackage.Literals.MAPPING__MAPPING_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -142,14 +141,14 @@ public class EntityItemProvider extends ItemProviderAdapter
 	}
 
 	/**
-	 * This returns Entity.gif.
+	 * This returns Mapping.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Entity"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Mapping"));
 	}
 
 	/**
@@ -185,9 +184,9 @@ public class EntityItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Entity) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Entity_type")
-				: getString("_UI_Entity_type") + " " + label;
+		String label = ((Mapping) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Mapping_type")
+				: getString("_UI_Mapping_type") + " " + label;
 	}
 
 	/**
@@ -216,13 +215,12 @@ public class EntityItemProvider extends ItemProviderAdapter
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Entity.class)) {
-		case MmPackage.ENTITY__NAME:
-		case MmPackage.ENTITY__GENERATE_REPOSITORY:
+		switch (notification.getFeatureID(Mapping.class)) {
+		case MmPackage.MAPPING__NAME:
+		case MmPackage.MAPPING__IS_LIST:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case MmPackage.ENTITY__FIELDS:
-		case MmPackage.ENTITY__MAPPING:
+		case MmPackage.MAPPING__MAPPING_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -240,11 +238,11 @@ public class EntityItemProvider extends ItemProviderAdapter
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(MmPackage.Literals.ENTITY__FIELDS, MmFactory.eINSTANCE.createField()));
+		newChildDescriptors.add(
+				createChildParameter(MmPackage.Literals.MAPPING__MAPPING_TYPE, MmFactory.eINSTANCE.createManyToMany()));
 
-		newChildDescriptors
-				.add(createChildParameter(MmPackage.Literals.ENTITY__MAPPING, MmFactory.eINSTANCE.createMapping()));
+		newChildDescriptors.add(
+				createChildParameter(MmPackage.Literals.MAPPING__MAPPING_TYPE, MmFactory.eINSTANCE.createOneToOne()));
 	}
 
 	/**

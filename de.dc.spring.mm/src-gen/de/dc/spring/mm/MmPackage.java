@@ -4,6 +4,7 @@ package de.dc.spring.mm;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -213,13 +214,22 @@ public interface MmPackage extends EPackage {
 	int ENTITY__FIELDS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__MAPPING = 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 4;
+	int ENTITY_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -231,6 +241,255 @@ public interface MmPackage extends EPackage {
 	int ENTITY_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.MappingImpl <em>Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.MappingImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getMapping()
+	 * @generated
+	 */
+	int MAPPING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__ENTITY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Is List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__IS_LIST = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mapping Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__MAPPING_TYPE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.MappingTypeImpl <em>Mapping Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.MappingTypeImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getMappingType()
+	 * @generated
+	 */
+	int MAPPING_TYPE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_TYPE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Mapping Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_TYPE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.OneToManyImpl <em>One To Many</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.OneToManyImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getOneToMany()
+	 * @generated
+	 */
+	int ONE_TO_MANY = 5;
+
+	/**
+	 * The number of structural features of the '<em>One To Many</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_MANY_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>One To Many</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_MANY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.ManyToManyImpl <em>Many To Many</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.ManyToManyImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToMany()
+	 * @generated
+	 */
+	int MANY_TO_MANY = 6;
+
+	/**
+	 * The feature id for the '<em><b>Cascade</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__CASCADE = MAPPING_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Join Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__JOIN_TABLE_NAME = MAPPING_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Join Columns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__JOIN_COLUMNS = MAPPING_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Inverse Join Columns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__INVERSE_JOIN_COLUMNS = MAPPING_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Mapped By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__MAPPED_BY = MAPPING_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Many To Many</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY_FEATURE_COUNT = MAPPING_TYPE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Many To Many</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY_OPERATION_COUNT = MAPPING_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.OneToOneImpl <em>One To One</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.OneToOneImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getOneToOne()
+	 * @generated
+	 */
+	int ONE_TO_ONE = 7;
+
+	/**
+	 * The number of structural features of the '<em>One To One</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_ONE_FEATURE_COUNT = MAPPING_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>One To One</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_ONE_OPERATION_COUNT = MAPPING_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.ManyToOneImpl <em>Many To One</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.ManyToOneImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToOne()
+	 * @generated
+	 */
+	int MANY_TO_ONE = 8;
+
+	/**
+	 * The number of structural features of the '<em>Many To One</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_ONE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Many To One</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_ONE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.dc.spring.mm.impl.FieldImpl <em>Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -238,7 +497,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 3;
+	int FIELD = 9;
 
 	/**
 	 * The feature id for the '<em><b>Is Id</b></em>' attribute.
@@ -293,7 +552,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getDBSource()
 	 * @generated
 	 */
-	int DB_SOURCE = 4;
+	int DB_SOURCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Enable Console</b></em>' attribute.
@@ -384,6 +643,16 @@ public interface MmPackage extends EPackage {
 	 * @ordered
 	 */
 	int DB_SOURCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.Cascade <em>Cascade</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.Cascade
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getCascade()
+	 * @generated
+	 */
+	int CASCADE = 11;
 
 	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.SpringProject <em>Spring Project</em>}'.
@@ -524,6 +793,176 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntity_Fields();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dc.spring.mm.Entity#getMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mapping</em>'.
+	 * @see de.dc.spring.mm.Entity#getMapping()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_Mapping();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.Mapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping</em>'.
+	 * @see de.dc.spring.mm.Mapping
+	 * @generated
+	 */
+	EClass getMapping();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.Mapping#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dc.spring.mm.Mapping#getName()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EAttribute getMapping_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dc.spring.mm.Mapping#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see de.dc.spring.mm.Mapping#getEntity()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EReference getMapping_Entity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.Mapping#isIsList <em>Is List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is List</em>'.
+	 * @see de.dc.spring.mm.Mapping#isIsList()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EAttribute getMapping_IsList();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.dc.spring.mm.Mapping#getMappingType <em>Mapping Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Mapping Type</em>'.
+	 * @see de.dc.spring.mm.Mapping#getMappingType()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EReference getMapping_MappingType();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.MappingType <em>Mapping Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Type</em>'.
+	 * @see de.dc.spring.mm.MappingType
+	 * @generated
+	 */
+	EClass getMappingType();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.OneToMany <em>One To Many</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>One To Many</em>'.
+	 * @see de.dc.spring.mm.OneToMany
+	 * @generated
+	 */
+	EClass getOneToMany();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.ManyToMany <em>Many To Many</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Many To Many</em>'.
+	 * @see de.dc.spring.mm.ManyToMany
+	 * @generated
+	 */
+	EClass getManyToMany();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.ManyToMany#getCascade <em>Cascade</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cascade</em>'.
+	 * @see de.dc.spring.mm.ManyToMany#getCascade()
+	 * @see #getManyToMany()
+	 * @generated
+	 */
+	EAttribute getManyToMany_Cascade();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.ManyToMany#getJoinTableName <em>Join Table Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Join Table Name</em>'.
+	 * @see de.dc.spring.mm.ManyToMany#getJoinTableName()
+	 * @see #getManyToMany()
+	 * @generated
+	 */
+	EAttribute getManyToMany_JoinTableName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.ManyToMany#getJoinColumns <em>Join Columns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Join Columns</em>'.
+	 * @see de.dc.spring.mm.ManyToMany#getJoinColumns()
+	 * @see #getManyToMany()
+	 * @generated
+	 */
+	EAttribute getManyToMany_JoinColumns();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.ManyToMany#getInverseJoinColumns <em>Inverse Join Columns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Inverse Join Columns</em>'.
+	 * @see de.dc.spring.mm.ManyToMany#getInverseJoinColumns()
+	 * @see #getManyToMany()
+	 * @generated
+	 */
+	EAttribute getManyToMany_InverseJoinColumns();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dc.spring.mm.ManyToMany#getMappedBy <em>Mapped By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mapped By</em>'.
+	 * @see de.dc.spring.mm.ManyToMany#getMappedBy()
+	 * @see #getManyToMany()
+	 * @generated
+	 */
+	EReference getManyToMany_MappedBy();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.OneToOne <em>One To One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>One To One</em>'.
+	 * @see de.dc.spring.mm.OneToOne
+	 * @generated
+	 */
+	EClass getOneToOne();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.ManyToOne <em>Many To One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Many To One</em>'.
+	 * @see de.dc.spring.mm.ManyToOne
+	 * @generated
+	 */
+	EClass getManyToOne();
 
 	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.Field <em>Field</em>}'.
@@ -667,6 +1106,16 @@ public interface MmPackage extends EPackage {
 	EAttribute getDBSource_ServerPort();
 
 	/**
+	 * Returns the meta object for enum '{@link de.dc.spring.mm.Cascade <em>Cascade</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Cascade</em>'.
+	 * @see de.dc.spring.mm.Cascade
+	 * @generated
+	 */
+	EEnum getCascade();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -800,6 +1249,146 @@ public interface MmPackage extends EPackage {
 		EReference ENTITY__FIELDS = eINSTANCE.getEntity_Fields();
 
 		/**
+		 * The meta object literal for the '<em><b>Mapping</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__MAPPING = eINSTANCE.getEntity_Mapping();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.MappingImpl <em>Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.MappingImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getMapping()
+		 * @generated
+		 */
+		EClass MAPPING = eINSTANCE.getMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAPPING__NAME = eINSTANCE.getMapping_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING__ENTITY = eINSTANCE.getMapping_Entity();
+
+		/**
+		 * The meta object literal for the '<em><b>Is List</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAPPING__IS_LIST = eINSTANCE.getMapping_IsList();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapping Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING__MAPPING_TYPE = eINSTANCE.getMapping_MappingType();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.MappingTypeImpl <em>Mapping Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.MappingTypeImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getMappingType()
+		 * @generated
+		 */
+		EClass MAPPING_TYPE = eINSTANCE.getMappingType();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.OneToManyImpl <em>One To Many</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.OneToManyImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getOneToMany()
+		 * @generated
+		 */
+		EClass ONE_TO_MANY = eINSTANCE.getOneToMany();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.ManyToManyImpl <em>Many To Many</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.ManyToManyImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToMany()
+		 * @generated
+		 */
+		EClass MANY_TO_MANY = eINSTANCE.getManyToMany();
+
+		/**
+		 * The meta object literal for the '<em><b>Cascade</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANY_TO_MANY__CASCADE = eINSTANCE.getManyToMany_Cascade();
+
+		/**
+		 * The meta object literal for the '<em><b>Join Table Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANY_TO_MANY__JOIN_TABLE_NAME = eINSTANCE.getManyToMany_JoinTableName();
+
+		/**
+		 * The meta object literal for the '<em><b>Join Columns</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANY_TO_MANY__JOIN_COLUMNS = eINSTANCE.getManyToMany_JoinColumns();
+
+		/**
+		 * The meta object literal for the '<em><b>Inverse Join Columns</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANY_TO_MANY__INVERSE_JOIN_COLUMNS = eINSTANCE.getManyToMany_InverseJoinColumns();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapped By</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANY_TO_MANY__MAPPED_BY = eINSTANCE.getManyToMany_MappedBy();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.OneToOneImpl <em>One To One</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.OneToOneImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getOneToOne()
+		 * @generated
+		 */
+		EClass ONE_TO_ONE = eINSTANCE.getOneToOne();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.ManyToOneImpl <em>Many To One</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.ManyToOneImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToOne()
+		 * @generated
+		 */
+		EClass MANY_TO_ONE = eINSTANCE.getManyToOne();
+
+		/**
 		 * The meta object literal for the '{@link de.dc.spring.mm.impl.FieldImpl <em>Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -906,6 +1495,16 @@ public interface MmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DB_SOURCE__SERVER_PORT = eINSTANCE.getDBSource_ServerPort();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.Cascade <em>Cascade</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.Cascade
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getCascade()
+		 * @generated
+		 */
+		EEnum CASCADE = eINSTANCE.getCascade();
 
 	}
 

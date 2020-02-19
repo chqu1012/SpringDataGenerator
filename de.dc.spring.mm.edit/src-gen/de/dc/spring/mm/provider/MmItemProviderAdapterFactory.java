@@ -144,6 +144,121 @@ public class MmItemProviderAdapterFactory extends MmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.Mapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MappingItemProvider mappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.Mapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMappingAdapter() {
+		if (mappingItemProvider == null) {
+			mappingItemProvider = new MappingItemProvider(this);
+		}
+
+		return mappingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.OneToMany} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OneToManyItemProvider oneToManyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.OneToMany}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOneToManyAdapter() {
+		if (oneToManyItemProvider == null) {
+			oneToManyItemProvider = new OneToManyItemProvider(this);
+		}
+
+		return oneToManyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.ManyToMany} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ManyToManyItemProvider manyToManyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.ManyToMany}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createManyToManyAdapter() {
+		if (manyToManyItemProvider == null) {
+			manyToManyItemProvider = new ManyToManyItemProvider(this);
+		}
+
+		return manyToManyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.OneToOne} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OneToOneItemProvider oneToOneItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.OneToOne}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOneToOneAdapter() {
+		if (oneToOneItemProvider == null) {
+			oneToOneItemProvider = new OneToOneItemProvider(this);
+		}
+
+		return oneToOneItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.ManyToOne} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ManyToOneItemProvider manyToOneItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.ManyToOne}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createManyToOneAdapter() {
+		if (manyToOneItemProvider == null) {
+			manyToOneItemProvider = new ManyToOneItemProvider(this);
+		}
+
+		return manyToOneItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.Field} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -300,6 +415,16 @@ public class MmItemProviderAdapterFactory extends MmAdapterFactory
 			restControllerItemProvider.dispose();
 		if (entityItemProvider != null)
 			entityItemProvider.dispose();
+		if (mappingItemProvider != null)
+			mappingItemProvider.dispose();
+		if (oneToManyItemProvider != null)
+			oneToManyItemProvider.dispose();
+		if (manyToManyItemProvider != null)
+			manyToManyItemProvider.dispose();
+		if (oneToOneItemProvider != null)
+			oneToOneItemProvider.dispose();
+		if (manyToOneItemProvider != null)
+			manyToOneItemProvider.dispose();
 		if (fieldItemProvider != null)
 			fieldItemProvider.dispose();
 		if (dbSourceItemProvider != null)
