@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mm:SpringProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mm="http://www.frateranatis.org/spring" basePackage="de.dc.spring.crm" name="CRM">
+  <dbSource/>
+  <entities name="BaseEnttiy">
+    <fields isId="true" name="id" datatype="Long"/>
+    <fields name="name"/>
+    <fields name="note"/>
+    <fields name="description"/>
+  </entities>
+  <entities superClass="//@entities.0" name="User">
+    <fields name="firstname"/>
+    <fields name="lastname"/>
+    <fields name="name"/>
+    <fields name="password"/>
+    <fields name="passwordDuration" datatype="Integer"/>
+    <fields name="passwordDuration" datatype="LocalDate"/>
+  </entities>
+</mm:SpringProject>

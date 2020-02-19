@@ -1,0 +1,42 @@
+@Ecore(nsURI="http://www.frateranatis.org/spring")
+@GenModel(multipleEditorPages="false", creationIcons="false", editDirectory="/de.dc.spring.mm.edit/src-gen",
+	editorDirectory="/de.dc.spring.mm.editor/src-gen", richClientPlatform="true", codeFormatting="true",
+	importerID="org.eclipse.emf.importer.ecore", runtimePlatform="RCP", fileExtensions="spring", tableProviders="true",
+	dataTypeConverters="true")
+package de.dc.spring.mm
+
+class SpringProject{
+	String basePackage
+	String name
+	contains DBSource dbSource
+	contains Entity[0..*] entities
+	contains RestController[0..*] controllers
+}
+
+class RestController{
+	String path
+}
+
+class Entity{
+	refers Entity superClass
+	String name
+	boolean generateRepository = 'true'
+	contains Field[0..*] fields
+}
+
+class Field{
+	boolean isId = 'false'
+	String name
+	String datatype = 'String'
+}
+
+class DBSource{
+	boolean enableConsole = 'true'
+	boolean webAllowOothers = 'true'
+	String consolePath = '/h2-console'
+	String url = 'jdbc:h2:file:./data/Repository;DB_CLOSE_ON_EXIT=true;'
+	String user = 'SA'
+	String password = 'SA'
+	String driveClassName = 'org.h2.Driver'
+	String serverPort = '2001'
+}
