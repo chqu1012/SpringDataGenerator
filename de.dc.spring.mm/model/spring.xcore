@@ -14,7 +14,23 @@ class SpringProject{
 }
 
 class RestController{
+	String name
 	String path
+	refers Entity[0..*] usedEntities
+	contains RestMapping[0..*] mappings
+}
+
+abstract class RestMapping{
+	String path
+	String name
+	refers Entity[0..1] usedEntity
+	String body
+}
+
+class GetMapping extends RestMapping{}
+
+class PostMapping extends RestMapping{
+	contains Field[0..*] parameters
 }
 
 class Entity{
@@ -32,27 +48,24 @@ class Mapping{
 	contains MappingType mappingType
 }
 
-abstract class MappingType{}
-
-class OneToMany{}
-
-class ManyToMany extends MappingType{
+abstract class MappingType{
 	Cascade cascade = 'ALL'
-	String joinTableName
-	String joinColumns
-	String inverseJoinColumns
 	refers Entity mappedBy
 }
 
-class OneToOne extends MappingType{
-	
+class OneToMany extends MappingType{}
+
+class ManyToOne extends MappingType{}
+
+class ManyToMany extends MappingType{
+	String joinTableName
+	String joinColumns
+	String inverseJoinColumns
 }
 
-enum Cascade{
-	ALL
-}
+class OneToOne extends MappingType{}
 
-class ManyToOne{}
+enum Cascade{ ALL }
 
 class Field{
 	boolean isId = 'false'

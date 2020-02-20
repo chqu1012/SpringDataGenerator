@@ -239,6 +239,12 @@ public class MappingItemProvider extends ItemProviderAdapter
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(
+				createChildParameter(MmPackage.Literals.MAPPING__MAPPING_TYPE, MmFactory.eINSTANCE.createOneToMany()));
+
+		newChildDescriptors.add(
+				createChildParameter(MmPackage.Literals.MAPPING__MAPPING_TYPE, MmFactory.eINSTANCE.createManyToOne()));
+
+		newChildDescriptors.add(
 				createChildParameter(MmPackage.Literals.MAPPING__MAPPING_TYPE, MmFactory.eINSTANCE.createManyToMany()));
 
 		newChildDescriptors.add(

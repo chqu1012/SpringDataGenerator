@@ -6,6 +6,7 @@ import de.dc.spring.mm.Cascade;
 import de.dc.spring.mm.DBSource;
 import de.dc.spring.mm.Entity;
 import de.dc.spring.mm.Field;
+import de.dc.spring.mm.GetMapping;
 import de.dc.spring.mm.ManyToMany;
 import de.dc.spring.mm.ManyToOne;
 import de.dc.spring.mm.Mapping;
@@ -14,7 +15,9 @@ import de.dc.spring.mm.MmFactory;
 import de.dc.spring.mm.MmPackage;
 import de.dc.spring.mm.OneToMany;
 import de.dc.spring.mm.OneToOne;
+import de.dc.spring.mm.PostMapping;
 import de.dc.spring.mm.RestController;
+import de.dc.spring.mm.RestMapping;
 import de.dc.spring.mm.SpringProject;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -52,6 +55,27 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass restMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass getMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass postMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass entityEClass = null;
 
 	/**
@@ -80,6 +104,13 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass manyToOneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass manyToManyEClass = null;
 
 	/**
@@ -88,13 +119,6 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	private EClass oneToOneEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass manyToOneEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,8 +283,118 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRestController_Path() {
+	public EAttribute getRestController_Name() {
 		return (EAttribute) restControllerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRestController_Path() {
+		return (EAttribute) restControllerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRestController_UsedEntities() {
+		return (EReference) restControllerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRestController_Mappings() {
+		return (EReference) restControllerEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRestMapping() {
+		return restMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRestMapping_Path() {
+		return (EAttribute) restMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRestMapping_Name() {
+		return (EAttribute) restMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRestMapping_UsedEntity() {
+		return (EReference) restMappingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRestMapping_Body() {
+		return (EAttribute) restMappingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getGetMapping() {
+		return getMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPostMapping() {
+		return postMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPostMapping_Parameters() {
+		return (EReference) postMappingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -389,8 +523,38 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMappingType_Cascade() {
+		return (EAttribute) mappingTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMappingType_MappedBy() {
+		return (EReference) mappingTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getOneToMany() {
 		return oneToManyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getManyToOne() {
+		return manyToOneEClass;
 	}
 
 	/**
@@ -409,7 +573,7 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getManyToMany_Cascade() {
+	public EAttribute getManyToMany_JoinTableName() {
 		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -419,7 +583,7 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getManyToMany_JoinTableName() {
+	public EAttribute getManyToMany_JoinColumns() {
 		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -429,28 +593,8 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getManyToMany_JoinColumns() {
-		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getManyToMany_InverseJoinColumns() {
-		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getManyToMany_MappedBy() {
-		return (EReference) manyToManyEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) manyToManyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -461,16 +605,6 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 	@Override
 	public EClass getOneToOne() {
 		return oneToOneEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getManyToOne() {
-		return manyToOneEClass;
 	}
 
 	/**
@@ -651,7 +785,21 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		createEReference(springProjectEClass, SPRING_PROJECT__CONTROLLERS);
 
 		restControllerEClass = createEClass(REST_CONTROLLER);
+		createEAttribute(restControllerEClass, REST_CONTROLLER__NAME);
 		createEAttribute(restControllerEClass, REST_CONTROLLER__PATH);
+		createEReference(restControllerEClass, REST_CONTROLLER__USED_ENTITIES);
+		createEReference(restControllerEClass, REST_CONTROLLER__MAPPINGS);
+
+		restMappingEClass = createEClass(REST_MAPPING);
+		createEAttribute(restMappingEClass, REST_MAPPING__PATH);
+		createEAttribute(restMappingEClass, REST_MAPPING__NAME);
+		createEReference(restMappingEClass, REST_MAPPING__USED_ENTITY);
+		createEAttribute(restMappingEClass, REST_MAPPING__BODY);
+
+		getMappingEClass = createEClass(GET_MAPPING);
+
+		postMappingEClass = createEClass(POST_MAPPING);
+		createEReference(postMappingEClass, POST_MAPPING__PARAMETERS);
 
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__SUPER_CLASS);
@@ -667,19 +815,19 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		createEReference(mappingEClass, MAPPING__MAPPING_TYPE);
 
 		mappingTypeEClass = createEClass(MAPPING_TYPE);
+		createEAttribute(mappingTypeEClass, MAPPING_TYPE__CASCADE);
+		createEReference(mappingTypeEClass, MAPPING_TYPE__MAPPED_BY);
 
 		oneToManyEClass = createEClass(ONE_TO_MANY);
 
+		manyToOneEClass = createEClass(MANY_TO_ONE);
+
 		manyToManyEClass = createEClass(MANY_TO_MANY);
-		createEAttribute(manyToManyEClass, MANY_TO_MANY__CASCADE);
 		createEAttribute(manyToManyEClass, MANY_TO_MANY__JOIN_TABLE_NAME);
 		createEAttribute(manyToManyEClass, MANY_TO_MANY__JOIN_COLUMNS);
 		createEAttribute(manyToManyEClass, MANY_TO_MANY__INVERSE_JOIN_COLUMNS);
-		createEReference(manyToManyEClass, MANY_TO_MANY__MAPPED_BY);
 
 		oneToOneEClass = createEClass(ONE_TO_ONE);
-
-		manyToOneEClass = createEClass(MANY_TO_ONE);
 
 		fieldEClass = createEClass(FIELD);
 		createEAttribute(fieldEClass, FIELD__IS_ID);
@@ -732,6 +880,10 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		getMappingEClass.getESuperTypes().add(this.getRestMapping());
+		postMappingEClass.getESuperTypes().add(this.getRestMapping());
+		oneToManyEClass.getESuperTypes().add(this.getMappingType());
+		manyToOneEClass.getESuperTypes().add(this.getMappingType());
 		manyToManyEClass.getESuperTypes().add(this.getMappingType());
 		oneToOneEClass.getESuperTypes().add(this.getMappingType());
 
@@ -756,9 +908,42 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 
 		initEClass(restControllerEClass, RestController.class, "RestController", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRestController_Name(), theEcorePackage.getEString(), "name", null, 0, 1, RestController.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getRestController_Path(), theEcorePackage.getEString(), "path", null, 0, 1, RestController.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getRestController_UsedEntities(), this.getEntity(), null, "usedEntities", null, 0, -1,
+				RestController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestController_Mappings(), this.getRestMapping(), null, "mappings", null, 0, -1,
+				RestController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(restMappingEClass, RestMapping.class, "RestMapping", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRestMapping_Path(), theEcorePackage.getEString(), "path", null, 0, 1, RestMapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getRestMapping_Name(), theEcorePackage.getEString(), "name", null, 0, 1, RestMapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getRestMapping_UsedEntity(), this.getEntity(), null, "usedEntity", null, 0, 1, RestMapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRestMapping_Body(), theEcorePackage.getEString(), "body", null, 0, 1, RestMapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(getMappingEClass, GetMapping.class, "GetMapping", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(postMappingEClass, PostMapping.class, "PostMapping", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPostMapping_Parameters(), this.getField(), null, "parameters", null, 0, -1, PostMapping.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_SuperClass(), this.getEntity(), null, "superClass", null, 0, 1, Entity.class,
@@ -792,15 +977,21 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 
 		initEClass(mappingTypeEClass, MappingType.class, "MappingType", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMappingType_Cascade(), this.getCascade(), "cascade", "ALL", 0, 1, MappingType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getMappingType_MappedBy(), this.getEntity(), null, "mappedBy", null, 0, 1, MappingType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oneToManyEClass, OneToMany.class, "OneToMany", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(manyToOneEClass, ManyToOne.class, "ManyToOne", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(manyToManyEClass, ManyToMany.class, "ManyToMany", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getManyToMany_Cascade(), this.getCascade(), "cascade", "ALL", 0, 1, ManyToMany.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getManyToMany_JoinTableName(), theEcorePackage.getEString(), "joinTableName", null, 0, 1,
 				ManyToMany.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -810,14 +1001,8 @@ public class MmPackageImpl extends EPackageImpl implements MmPackage {
 		initEAttribute(getManyToMany_InverseJoinColumns(), theEcorePackage.getEString(), "inverseJoinColumns", null, 0,
 				1, ManyToMany.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getManyToMany_MappedBy(), this.getEntity(), null, "mappedBy", null, 0, 1, ManyToMany.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oneToOneEClass, OneToOne.class, "OneToOne", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(manyToOneEClass, ManyToOne.class, "ManyToOne", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

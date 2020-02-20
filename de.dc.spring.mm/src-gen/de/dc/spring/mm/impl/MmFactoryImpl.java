@@ -60,18 +60,22 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 			return createSpringProject();
 		case MmPackage.REST_CONTROLLER:
 			return createRestController();
+		case MmPackage.GET_MAPPING:
+			return createGetMapping();
+		case MmPackage.POST_MAPPING:
+			return createPostMapping();
 		case MmPackage.ENTITY:
 			return createEntity();
 		case MmPackage.MAPPING:
 			return createMapping();
 		case MmPackage.ONE_TO_MANY:
 			return createOneToMany();
+		case MmPackage.MANY_TO_ONE:
+			return createManyToOne();
 		case MmPackage.MANY_TO_MANY:
 			return createManyToMany();
 		case MmPackage.ONE_TO_ONE:
 			return createOneToOne();
-		case MmPackage.MANY_TO_ONE:
-			return createManyToOne();
 		case MmPackage.FIELD:
 			return createField();
 		case MmPackage.DB_SOURCE:
@@ -139,6 +143,28 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 	 * @generated
 	 */
 	@Override
+	public GetMapping createGetMapping() {
+		GetMappingImpl getMapping = new GetMappingImpl();
+		return getMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PostMapping createPostMapping() {
+		PostMappingImpl postMapping = new PostMappingImpl();
+		return postMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
@@ -172,6 +198,17 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 	 * @generated
 	 */
 	@Override
+	public ManyToOne createManyToOne() {
+		ManyToOneImpl manyToOne = new ManyToOneImpl();
+		return manyToOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ManyToMany createManyToMany() {
 		ManyToManyImpl manyToMany = new ManyToManyImpl();
 		return manyToMany;
@@ -186,17 +223,6 @@ public class MmFactoryImpl extends EFactoryImpl implements MmFactory {
 	public OneToOne createOneToOne() {
 		OneToOneImpl oneToOne = new OneToOneImpl();
 		return oneToOne;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ManyToOne createManyToOne() {
-		ManyToOneImpl manyToOne = new ManyToOneImpl();
-		return manyToOne;
 	}
 
 	/**

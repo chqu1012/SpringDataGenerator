@@ -121,6 +121,52 @@ public class MmItemProviderAdapterFactory extends MmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.GetMapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GetMappingItemProvider getMappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.GetMapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGetMappingAdapter() {
+		if (getMappingItemProvider == null) {
+			getMappingItemProvider = new GetMappingItemProvider(this);
+		}
+
+		return getMappingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.PostMapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PostMappingItemProvider postMappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.dc.spring.mm.PostMapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPostMappingAdapter() {
+		if (postMappingItemProvider == null) {
+			postMappingItemProvider = new PostMappingItemProvider(this);
+		}
+
+		return postMappingItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.dc.spring.mm.Entity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,18 +459,22 @@ public class MmItemProviderAdapterFactory extends MmAdapterFactory
 			springProjectItemProvider.dispose();
 		if (restControllerItemProvider != null)
 			restControllerItemProvider.dispose();
+		if (getMappingItemProvider != null)
+			getMappingItemProvider.dispose();
+		if (postMappingItemProvider != null)
+			postMappingItemProvider.dispose();
 		if (entityItemProvider != null)
 			entityItemProvider.dispose();
 		if (mappingItemProvider != null)
 			mappingItemProvider.dispose();
 		if (oneToManyItemProvider != null)
 			oneToManyItemProvider.dispose();
+		if (manyToOneItemProvider != null)
+			manyToOneItemProvider.dispose();
 		if (manyToManyItemProvider != null)
 			manyToManyItemProvider.dispose();
 		if (oneToOneItemProvider != null)
 			oneToOneItemProvider.dispose();
-		if (manyToOneItemProvider != null)
-			manyToOneItemProvider.dispose();
 		if (fieldItemProvider != null)
 			fieldItemProvider.dispose();
 		if (dbSourceItemProvider != null)

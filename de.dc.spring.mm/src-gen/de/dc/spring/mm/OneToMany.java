@@ -2,8 +2,6 @@
  */
 package de.dc.spring.mm;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>One To Many</b></em>'.
@@ -14,5 +12,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface OneToMany extends EObject {
+public interface OneToMany extends MappingType {
 } // OneToMany

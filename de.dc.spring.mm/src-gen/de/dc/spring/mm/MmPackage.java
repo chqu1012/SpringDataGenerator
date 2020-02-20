@@ -141,13 +141,40 @@ public interface MmPackage extends EPackage {
 	int REST_CONTROLLER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_CONTROLLER__NAME = 0;
+
+	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REST_CONTROLLER__PATH = 0;
+	int REST_CONTROLLER__PATH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Used Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_CONTROLLER__USED_ENTITIES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_CONTROLLER__MAPPINGS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Rest Controller</em>' class.
@@ -156,7 +183,7 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REST_CONTROLLER_FEATURE_COUNT = 1;
+	int REST_CONTROLLER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Rest Controller</em>' class.
@@ -168,6 +195,207 @@ public interface MmPackage extends EPackage {
 	int REST_CONTROLLER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.RestMappingImpl <em>Rest Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.RestMappingImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getRestMapping()
+	 * @generated
+	 */
+	int REST_MAPPING = 2;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_MAPPING__PATH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_MAPPING__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Used Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_MAPPING__USED_ENTITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_MAPPING__BODY = 3;
+
+	/**
+	 * The number of structural features of the '<em>Rest Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_MAPPING_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Rest Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_MAPPING_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.GetMappingImpl <em>Get Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.GetMappingImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getGetMapping()
+	 * @generated
+	 */
+	int GET_MAPPING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_MAPPING__PATH = REST_MAPPING__PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_MAPPING__NAME = REST_MAPPING__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Used Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_MAPPING__USED_ENTITY = REST_MAPPING__USED_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_MAPPING__BODY = REST_MAPPING__BODY;
+
+	/**
+	 * The number of structural features of the '<em>Get Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_MAPPING_FEATURE_COUNT = REST_MAPPING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Get Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_MAPPING_OPERATION_COUNT = REST_MAPPING_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.PostMappingImpl <em>Post Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.PostMappingImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getPostMapping()
+	 * @generated
+	 */
+	int POST_MAPPING = 4;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING__PATH = REST_MAPPING__PATH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING__NAME = REST_MAPPING__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Used Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING__USED_ENTITY = REST_MAPPING__USED_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING__BODY = REST_MAPPING__BODY;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING__PARAMETERS = REST_MAPPING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Post Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING_FEATURE_COUNT = REST_MAPPING_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Post Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_MAPPING_OPERATION_COUNT = REST_MAPPING_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.dc.spring.mm.impl.EntityImpl <em>Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,7 +403,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 2;
+	int ENTITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Super Class</b></em>' reference.
@@ -248,7 +476,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getMapping()
 	 * @generated
 	 */
-	int MAPPING = 3;
+	int MAPPING = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -312,7 +540,25 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getMappingType()
 	 * @generated
 	 */
-	int MAPPING_TYPE = 4;
+	int MAPPING_TYPE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Cascade</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_TYPE__CASCADE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Mapped By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_TYPE__MAPPED_BY = 1;
 
 	/**
 	 * The number of structural features of the '<em>Mapping Type</em>' class.
@@ -321,7 +567,7 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_TYPE_FEATURE_COUNT = 0;
+	int MAPPING_TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Mapping Type</em>' class.
@@ -340,7 +586,25 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getOneToMany()
 	 * @generated
 	 */
-	int ONE_TO_MANY = 5;
+	int ONE_TO_MANY = 8;
+
+	/**
+	 * The feature id for the '<em><b>Cascade</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_MANY__CASCADE = MAPPING_TYPE__CASCADE;
+
+	/**
+	 * The feature id for the '<em><b>Mapped By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_MANY__MAPPED_BY = MAPPING_TYPE__MAPPED_BY;
 
 	/**
 	 * The number of structural features of the '<em>One To Many</em>' class.
@@ -349,7 +613,7 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONE_TO_MANY_FEATURE_COUNT = 0;
+	int ONE_TO_MANY_FEATURE_COUNT = MAPPING_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>One To Many</em>' class.
@@ -358,7 +622,53 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONE_TO_MANY_OPERATION_COUNT = 0;
+	int ONE_TO_MANY_OPERATION_COUNT = MAPPING_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.dc.spring.mm.impl.ManyToOneImpl <em>Many To One</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dc.spring.mm.impl.ManyToOneImpl
+	 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToOne()
+	 * @generated
+	 */
+	int MANY_TO_ONE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Cascade</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_ONE__CASCADE = MAPPING_TYPE__CASCADE;
+
+	/**
+	 * The feature id for the '<em><b>Mapped By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_ONE__MAPPED_BY = MAPPING_TYPE__MAPPED_BY;
+
+	/**
+	 * The number of structural features of the '<em>Many To One</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_ONE_FEATURE_COUNT = MAPPING_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Many To One</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_ONE_OPERATION_COUNT = MAPPING_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.dc.spring.mm.impl.ManyToManyImpl <em>Many To Many</em>}' class.
@@ -368,7 +678,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToMany()
 	 * @generated
 	 */
-	int MANY_TO_MANY = 6;
+	int MANY_TO_MANY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Cascade</b></em>' attribute.
@@ -377,34 +687,7 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANY_TO_MANY__CASCADE = MAPPING_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Join Table Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANY_TO_MANY__JOIN_TABLE_NAME = MAPPING_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Join Columns</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANY_TO_MANY__JOIN_COLUMNS = MAPPING_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Inverse Join Columns</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANY_TO_MANY__INVERSE_JOIN_COLUMNS = MAPPING_TYPE_FEATURE_COUNT + 3;
+	int MANY_TO_MANY__CASCADE = MAPPING_TYPE__CASCADE;
 
 	/**
 	 * The feature id for the '<em><b>Mapped By</b></em>' reference.
@@ -413,7 +696,34 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANY_TO_MANY__MAPPED_BY = MAPPING_TYPE_FEATURE_COUNT + 4;
+	int MANY_TO_MANY__MAPPED_BY = MAPPING_TYPE__MAPPED_BY;
+
+	/**
+	 * The feature id for the '<em><b>Join Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__JOIN_TABLE_NAME = MAPPING_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Join Columns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__JOIN_COLUMNS = MAPPING_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Inverse Join Columns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANY_TO_MANY__INVERSE_JOIN_COLUMNS = MAPPING_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Many To Many</em>' class.
@@ -422,7 +732,7 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANY_TO_MANY_FEATURE_COUNT = MAPPING_TYPE_FEATURE_COUNT + 5;
+	int MANY_TO_MANY_FEATURE_COUNT = MAPPING_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Many To Many</em>' class.
@@ -441,7 +751,25 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getOneToOne()
 	 * @generated
 	 */
-	int ONE_TO_ONE = 7;
+	int ONE_TO_ONE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Cascade</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_ONE__CASCADE = MAPPING_TYPE__CASCADE;
+
+	/**
+	 * The feature id for the '<em><b>Mapped By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_ONE__MAPPED_BY = MAPPING_TYPE__MAPPED_BY;
 
 	/**
 	 * The number of structural features of the '<em>One To One</em>' class.
@@ -462,34 +790,6 @@ public interface MmPackage extends EPackage {
 	int ONE_TO_ONE_OPERATION_COUNT = MAPPING_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.dc.spring.mm.impl.ManyToOneImpl <em>Many To One</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.dc.spring.mm.impl.ManyToOneImpl
-	 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToOne()
-	 * @generated
-	 */
-	int MANY_TO_ONE = 8;
-
-	/**
-	 * The number of structural features of the '<em>Many To One</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANY_TO_ONE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Many To One</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANY_TO_ONE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link de.dc.spring.mm.impl.FieldImpl <em>Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,7 +797,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 9;
+	int FIELD = 12;
 
 	/**
 	 * The feature id for the '<em><b>Is Id</b></em>' attribute.
@@ -552,7 +852,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getDBSource()
 	 * @generated
 	 */
-	int DB_SOURCE = 10;
+	int DB_SOURCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Enable Console</b></em>' attribute.
@@ -652,7 +952,7 @@ public interface MmPackage extends EPackage {
 	 * @see de.dc.spring.mm.impl.MmPackageImpl#getCascade()
 	 * @generated
 	 */
-	int CASCADE = 11;
+	int CASCADE = 14;
 
 	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.SpringProject <em>Spring Project</em>}'.
@@ -730,6 +1030,17 @@ public interface MmPackage extends EPackage {
 	EClass getRestController();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.RestController#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dc.spring.mm.RestController#getName()
+	 * @see #getRestController()
+	 * @generated
+	 */
+	EAttribute getRestController_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.RestController#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -739,6 +1050,113 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRestController_Path();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.dc.spring.mm.RestController#getUsedEntities <em>Used Entities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Used Entities</em>'.
+	 * @see de.dc.spring.mm.RestController#getUsedEntities()
+	 * @see #getRestController()
+	 * @generated
+	 */
+	EReference getRestController_UsedEntities();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dc.spring.mm.RestController#getMappings <em>Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mappings</em>'.
+	 * @see de.dc.spring.mm.RestController#getMappings()
+	 * @see #getRestController()
+	 * @generated
+	 */
+	EReference getRestController_Mappings();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.RestMapping <em>Rest Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rest Mapping</em>'.
+	 * @see de.dc.spring.mm.RestMapping
+	 * @generated
+	 */
+	EClass getRestMapping();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.RestMapping#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see de.dc.spring.mm.RestMapping#getPath()
+	 * @see #getRestMapping()
+	 * @generated
+	 */
+	EAttribute getRestMapping_Path();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.RestMapping#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.dc.spring.mm.RestMapping#getName()
+	 * @see #getRestMapping()
+	 * @generated
+	 */
+	EAttribute getRestMapping_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dc.spring.mm.RestMapping#getUsedEntity <em>Used Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Used Entity</em>'.
+	 * @see de.dc.spring.mm.RestMapping#getUsedEntity()
+	 * @see #getRestMapping()
+	 * @generated
+	 */
+	EReference getRestMapping_UsedEntity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.RestMapping#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @see de.dc.spring.mm.RestMapping#getBody()
+	 * @see #getRestMapping()
+	 * @generated
+	 */
+	EAttribute getRestMapping_Body();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.GetMapping <em>Get Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Get Mapping</em>'.
+	 * @see de.dc.spring.mm.GetMapping
+	 * @generated
+	 */
+	EClass getGetMapping();
+
+	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.PostMapping <em>Post Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Post Mapping</em>'.
+	 * @see de.dc.spring.mm.PostMapping
+	 * @generated
+	 */
+	EClass getPostMapping();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dc.spring.mm.PostMapping#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see de.dc.spring.mm.PostMapping#getParameters()
+	 * @see #getPostMapping()
+	 * @generated
+	 */
+	EReference getPostMapping_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.Entity <em>Entity</em>}'.
@@ -870,6 +1288,28 @@ public interface MmPackage extends EPackage {
 	EClass getMappingType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.MappingType#getCascade <em>Cascade</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cascade</em>'.
+	 * @see de.dc.spring.mm.MappingType#getCascade()
+	 * @see #getMappingType()
+	 * @generated
+	 */
+	EAttribute getMappingType_Cascade();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dc.spring.mm.MappingType#getMappedBy <em>Mapped By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mapped By</em>'.
+	 * @see de.dc.spring.mm.MappingType#getMappedBy()
+	 * @see #getMappingType()
+	 * @generated
+	 */
+	EReference getMappingType_MappedBy();
+
+	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.OneToMany <em>One To Many</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -880,6 +1320,16 @@ public interface MmPackage extends EPackage {
 	EClass getOneToMany();
 
 	/**
+	 * Returns the meta object for class '{@link de.dc.spring.mm.ManyToOne <em>Many To One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Many To One</em>'.
+	 * @see de.dc.spring.mm.ManyToOne
+	 * @generated
+	 */
+	EClass getManyToOne();
+
+	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.ManyToMany <em>Many To Many</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -888,17 +1338,6 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getManyToMany();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.ManyToMany#getCascade <em>Cascade</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cascade</em>'.
-	 * @see de.dc.spring.mm.ManyToMany#getCascade()
-	 * @see #getManyToMany()
-	 * @generated
-	 */
-	EAttribute getManyToMany_Cascade();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.dc.spring.mm.ManyToMany#getJoinTableName <em>Join Table Name</em>}'.
@@ -934,17 +1373,6 @@ public interface MmPackage extends EPackage {
 	EAttribute getManyToMany_InverseJoinColumns();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dc.spring.mm.ManyToMany#getMappedBy <em>Mapped By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mapped By</em>'.
-	 * @see de.dc.spring.mm.ManyToMany#getMappedBy()
-	 * @see #getManyToMany()
-	 * @generated
-	 */
-	EReference getManyToMany_MappedBy();
-
-	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.OneToOne <em>One To One</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -953,16 +1381,6 @@ public interface MmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOneToOne();
-
-	/**
-	 * Returns the meta object for class '{@link de.dc.spring.mm.ManyToOne <em>Many To One</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Many To One</em>'.
-	 * @see de.dc.spring.mm.ManyToOne
-	 * @generated
-	 */
-	EClass getManyToOne();
 
 	/**
 	 * Returns the meta object for class '{@link de.dc.spring.mm.Field <em>Field</em>}'.
@@ -1199,12 +1617,106 @@ public interface MmPackage extends EPackage {
 		EClass REST_CONTROLLER = eINSTANCE.getRestController();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REST_CONTROLLER__NAME = eINSTANCE.getRestController_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute REST_CONTROLLER__PATH = eINSTANCE.getRestController_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Used Entities</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REST_CONTROLLER__USED_ENTITIES = eINSTANCE.getRestController_UsedEntities();
+
+		/**
+		 * The meta object literal for the '<em><b>Mappings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REST_CONTROLLER__MAPPINGS = eINSTANCE.getRestController_Mappings();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.RestMappingImpl <em>Rest Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.RestMappingImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getRestMapping()
+		 * @generated
+		 */
+		EClass REST_MAPPING = eINSTANCE.getRestMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REST_MAPPING__PATH = eINSTANCE.getRestMapping_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REST_MAPPING__NAME = eINSTANCE.getRestMapping_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Used Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REST_MAPPING__USED_ENTITY = eINSTANCE.getRestMapping_UsedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REST_MAPPING__BODY = eINSTANCE.getRestMapping_Body();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.GetMappingImpl <em>Get Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.GetMappingImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getGetMapping()
+		 * @generated
+		 */
+		EClass GET_MAPPING = eINSTANCE.getGetMapping();
+
+		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.PostMappingImpl <em>Post Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.PostMappingImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getPostMapping()
+		 * @generated
+		 */
+		EClass POST_MAPPING = eINSTANCE.getPostMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POST_MAPPING__PARAMETERS = eINSTANCE.getPostMapping_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link de.dc.spring.mm.impl.EntityImpl <em>Entity</em>}' class.
@@ -1309,6 +1821,22 @@ public interface MmPackage extends EPackage {
 		EClass MAPPING_TYPE = eINSTANCE.getMappingType();
 
 		/**
+		 * The meta object literal for the '<em><b>Cascade</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAPPING_TYPE__CASCADE = eINSTANCE.getMappingType_Cascade();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapped By</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING_TYPE__MAPPED_BY = eINSTANCE.getMappingType_MappedBy();
+
+		/**
 		 * The meta object literal for the '{@link de.dc.spring.mm.impl.OneToManyImpl <em>One To Many</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1319,6 +1847,16 @@ public interface MmPackage extends EPackage {
 		EClass ONE_TO_MANY = eINSTANCE.getOneToMany();
 
 		/**
+		 * The meta object literal for the '{@link de.dc.spring.mm.impl.ManyToOneImpl <em>Many To One</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dc.spring.mm.impl.ManyToOneImpl
+		 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToOne()
+		 * @generated
+		 */
+		EClass MANY_TO_ONE = eINSTANCE.getManyToOne();
+
+		/**
 		 * The meta object literal for the '{@link de.dc.spring.mm.impl.ManyToManyImpl <em>Many To Many</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1327,14 +1865,6 @@ public interface MmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MANY_TO_MANY = eINSTANCE.getManyToMany();
-
-		/**
-		 * The meta object literal for the '<em><b>Cascade</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MANY_TO_MANY__CASCADE = eINSTANCE.getManyToMany_Cascade();
 
 		/**
 		 * The meta object literal for the '<em><b>Join Table Name</b></em>' attribute feature.
@@ -1361,14 +1891,6 @@ public interface MmPackage extends EPackage {
 		EAttribute MANY_TO_MANY__INVERSE_JOIN_COLUMNS = eINSTANCE.getManyToMany_InverseJoinColumns();
 
 		/**
-		 * The meta object literal for the '<em><b>Mapped By</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MANY_TO_MANY__MAPPED_BY = eINSTANCE.getManyToMany_MappedBy();
-
-		/**
 		 * The meta object literal for the '{@link de.dc.spring.mm.impl.OneToOneImpl <em>One To One</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1377,16 +1899,6 @@ public interface MmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ONE_TO_ONE = eINSTANCE.getOneToOne();
-
-		/**
-		 * The meta object literal for the '{@link de.dc.spring.mm.impl.ManyToOneImpl <em>Many To One</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.dc.spring.mm.impl.ManyToOneImpl
-		 * @see de.dc.spring.mm.impl.MmPackageImpl#getManyToOne()
-		 * @generated
-		 */
-		EClass MANY_TO_ONE = eINSTANCE.getManyToOne();
 
 		/**
 		 * The meta object literal for the '{@link de.dc.spring.mm.impl.FieldImpl <em>Field</em>}' class.

@@ -40,6 +40,24 @@ public interface MmFactory extends EFactory {
 	RestController createRestController();
 
 	/**
+	 * Returns a new object of class '<em>Get Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Get Mapping</em>'.
+	 * @generated
+	 */
+	GetMapping createGetMapping();
+
+	/**
+	 * Returns a new object of class '<em>Post Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Post Mapping</em>'.
+	 * @generated
+	 */
+	PostMapping createPostMapping();
+
+	/**
 	 * Returns a new object of class '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,6 +85,15 @@ public interface MmFactory extends EFactory {
 	OneToMany createOneToMany();
 
 	/**
+	 * Returns a new object of class '<em>Many To One</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Many To One</em>'.
+	 * @generated
+	 */
+	ManyToOne createManyToOne();
+
+	/**
 	 * Returns a new object of class '<em>Many To Many</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,15 +110,6 @@ public interface MmFactory extends EFactory {
 	 * @generated
 	 */
 	OneToOne createOneToOne();
-
-	/**
-	 * Returns a new object of class '<em>Many To One</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Many To One</em>'.
-	 * @generated
-	 */
-	ManyToOne createManyToOne();
 
 	/**
 	 * Returns a new object of class '<em>Field</em>'.

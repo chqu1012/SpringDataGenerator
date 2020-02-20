@@ -80,6 +80,31 @@ public class MmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case MmPackage.REST_MAPPING: {
+			RestMapping restMapping = (RestMapping) theEObject;
+			T result = caseRestMapping(restMapping);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.GET_MAPPING: {
+			GetMapping getMapping = (GetMapping) theEObject;
+			T result = caseGetMapping(getMapping);
+			if (result == null)
+				result = caseRestMapping(getMapping);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.POST_MAPPING: {
+			PostMapping postMapping = (PostMapping) theEObject;
+			T result = casePostMapping(postMapping);
+			if (result == null)
+				result = caseRestMapping(postMapping);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case MmPackage.ENTITY: {
 			Entity entity = (Entity) theEObject;
 			T result = caseEntity(entity);
@@ -105,6 +130,17 @@ public class MmSwitch<T> extends Switch<T> {
 			OneToMany oneToMany = (OneToMany) theEObject;
 			T result = caseOneToMany(oneToMany);
 			if (result == null)
+				result = caseMappingType(oneToMany);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MmPackage.MANY_TO_ONE: {
+			ManyToOne manyToOne = (ManyToOne) theEObject;
+			T result = caseManyToOne(manyToOne);
+			if (result == null)
+				result = caseMappingType(manyToOne);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -122,13 +158,6 @@ public class MmSwitch<T> extends Switch<T> {
 			T result = caseOneToOne(oneToOne);
 			if (result == null)
 				result = caseMappingType(oneToOne);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case MmPackage.MANY_TO_ONE: {
-			ManyToOne manyToOne = (ManyToOne) theEObject;
-			T result = caseManyToOne(manyToOne);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -179,6 +208,51 @@ public class MmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRestController(RestController object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rest Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rest Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRestMapping(RestMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Get Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Get Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGetMapping(GetMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Post Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Post Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePostMapping(PostMapping object) {
 		return null;
 	}
 
@@ -243,6 +317,21 @@ public class MmSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Many To One</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Many To One</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseManyToOne(ManyToOne object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Many To Many</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -269,21 +358,6 @@ public class MmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOneToOne(OneToOne object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Many To One</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Many To One</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseManyToOne(ManyToOne object) {
 		return null;
 	}
 

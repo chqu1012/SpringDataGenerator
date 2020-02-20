@@ -7,8 +7,6 @@ import de.dc.spring.mm.OneToMany;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>One To Many</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class OneToManyImpl extends MinimalEObjectImpl.Container implements OneToMany {
+public class OneToManyImpl extends MappingTypeImpl implements OneToMany {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

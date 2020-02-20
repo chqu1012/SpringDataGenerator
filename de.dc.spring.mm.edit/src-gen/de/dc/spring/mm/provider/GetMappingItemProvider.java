@@ -2,29 +2,30 @@
  */
 package de.dc.spring.mm.provider;
 
-import de.dc.spring.mm.Cascade;
-import de.dc.spring.mm.OneToMany;
+import de.dc.spring.mm.GetMapping;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.dc.spring.mm.OneToMany} object.
+ * This is the item provider adapter for a {@link de.dc.spring.mm.GetMapping} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OneToManyItemProvider extends MappingTypeItemProvider {
+public class GetMappingItemProvider extends RestMappingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OneToManyItemProvider(AdapterFactory adapterFactory) {
+	public GetMappingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,14 +45,14 @@ public class OneToManyItemProvider extends MappingTypeItemProvider {
 	}
 
 	/**
-	 * This returns OneToMany.gif.
+	 * This returns GetMapping.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OneToMany"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/GetMapping"));
 	}
 
 	/**
@@ -72,10 +73,9 @@ public class OneToManyItemProvider extends MappingTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Cascade labelValue = ((OneToMany) object).getCascade();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_OneToMany_type")
-				: getString("_UI_OneToMany_type") + " " + label;
+		String label = ((GetMapping) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_GetMapping_type")
+				: getString("_UI_GetMapping_type") + " " + label;
 	}
 
 	/**

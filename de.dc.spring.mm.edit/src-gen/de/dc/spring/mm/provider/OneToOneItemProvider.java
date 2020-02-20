@@ -2,6 +2,8 @@
  */
 package de.dc.spring.mm.provider;
 
+import de.dc.spring.mm.Cascade;
+import de.dc.spring.mm.OneToOne;
 import java.util.Collection;
 import java.util.List;
 
@@ -71,7 +73,10 @@ public class OneToOneItemProvider extends MappingTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_OneToOne_type");
+		Cascade labelValue = ((OneToOne) object).getCascade();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_OneToOne_type")
+				: getString("_UI_OneToOne_type") + " " + label;
 	}
 
 	/**

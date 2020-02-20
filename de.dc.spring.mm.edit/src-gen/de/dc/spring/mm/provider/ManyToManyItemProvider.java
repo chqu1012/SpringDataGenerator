@@ -42,29 +42,11 @@ public class ManyToManyItemProvider extends MappingTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCascadePropertyDescriptor(object);
 			addJoinTableNamePropertyDescriptor(object);
 			addJoinColumnsPropertyDescriptor(object);
 			addInverseJoinColumnsPropertyDescriptor(object);
-			addMappedByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Cascade feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCascadePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ManyToMany_cascade_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ManyToMany_cascade_feature",
-								"_UI_ManyToMany_type"),
-						MmPackage.Literals.MANY_TO_MANY__CASCADE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -116,21 +98,6 @@ public class ManyToManyItemProvider extends MappingTypeItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Mapped By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMappedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ManyToMany_mappedBy_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ManyToMany_mappedBy_feature",
-								"_UI_ManyToMany_type"),
-						MmPackage.Literals.MANY_TO_MANY__MAPPED_BY, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This returns ManyToMany.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,7 +143,6 @@ public class ManyToManyItemProvider extends MappingTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ManyToMany.class)) {
-		case MmPackage.MANY_TO_MANY__CASCADE:
 		case MmPackage.MANY_TO_MANY__JOIN_TABLE_NAME:
 		case MmPackage.MANY_TO_MANY__JOIN_COLUMNS:
 		case MmPackage.MANY_TO_MANY__INVERSE_JOIN_COLUMNS:

@@ -2,22 +2,14 @@
  */
 package de.dc.spring.mm.provider;
 
+import de.dc.spring.mm.Cascade;
+import de.dc.spring.mm.ManyToOne;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
  * This is the item provider adapter for a {@link de.dc.spring.mm.ManyToOne} object.
@@ -25,9 +17,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ManyToOneItemProvider extends ItemProviderAdapter
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class ManyToOneItemProvider extends MappingTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,21 +55,6 @@ public class ManyToOneItemProvider extends ItemProviderAdapter
 	}
 
 	/**
-	 * This returns <code>getImage(object)</code> for the column index <code>0</code> or <code>super.getImage(object)</code> otherwise.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText(Object)
-	 * @see #getColumnText(Object, int)
-	 * @generated
-	 */
-	@Override
-	public Object getColumnImage(Object object, int columnIndex) {
-		// TODO: implement this method to return appropriate information for each column.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return columnIndex == 0 ? getImage(object) : super.getImage(object);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -97,22 +72,10 @@ public class ManyToOneItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ManyToOne_type");
-	}
-
-	/**
-	 * This returns <code>getText(object)</code> for the column index <code>0</code> or <code>super.getText(object)</code> otherwise.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImage(Object)
-	 * @see #getColumnImage(Object, int)
-	 * @generated
-	 */
-	@Override
-	public String getColumnText(Object object, int columnIndex) {
-		// TODO: implement this method to return appropriate information for each column.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return columnIndex == 0 ? getText(object) : super.getText(object);
+		Cascade labelValue = ((ManyToOne) object).getCascade();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_ManyToOne_type")
+				: getString("_UI_ManyToOne_type") + " " + label;
 	}
 
 	/**
@@ -138,17 +101,6 @@ public class ManyToOneItemProvider extends ItemProviderAdapter
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MmEditPlugin.INSTANCE;
 	}
 
 }

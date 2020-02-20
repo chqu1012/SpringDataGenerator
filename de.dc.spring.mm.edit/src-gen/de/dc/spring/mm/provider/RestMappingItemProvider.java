@@ -2,9 +2,9 @@
  */
 package de.dc.spring.mm.provider;
 
-import de.dc.spring.mm.Cascade;
-import de.dc.spring.mm.MappingType;
 import de.dc.spring.mm.MmPackage;
+import de.dc.spring.mm.RestMapping;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.dc.spring.mm.MappingType} object.
+ * This is the item provider adapter for a {@link de.dc.spring.mm.RestMapping} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MappingTypeItemProvider extends ItemProviderAdapter
+public class RestMappingItemProvider extends ItemProviderAdapter
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
 		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
@@ -40,7 +40,7 @@ public class MappingTypeItemProvider extends ItemProviderAdapter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MappingTypeItemProvider(AdapterFactory adapterFactory) {
+	public RestMappingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,41 +55,75 @@ public class MappingTypeItemProvider extends ItemProviderAdapter
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCascadePropertyDescriptor(object);
-			addMappedByPropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addUsedEntityPropertyDescriptor(object);
+			addBodyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Cascade feature.
+	 * This adds a property descriptor for the Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCascadePropertyDescriptor(Object object) {
+	protected void addPathPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_MappingType_cascade_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_MappingType_cascade_feature",
-								"_UI_MappingType_type"),
-						MmPackage.Literals.MAPPING_TYPE__CASCADE, true, false, false,
+						getResourceLocator(), getString("_UI_RestMapping_path_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RestMapping_path_feature",
+								"_UI_RestMapping_type"),
+						MmPackage.Literals.REST_MAPPING__PATH, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Mapped By feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMappedByPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_MappingType_mappedBy_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_MappingType_mappedBy_feature",
-								"_UI_MappingType_type"),
-						MmPackage.Literals.MAPPING_TYPE__MAPPED_BY, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_RestMapping_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RestMapping_name_feature",
+								"_UI_RestMapping_type"),
+						MmPackage.Literals.REST_MAPPING__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Used Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsedEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RestMapping_usedEntity_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RestMapping_usedEntity_feature",
+								"_UI_RestMapping_type"),
+						MmPackage.Literals.REST_MAPPING__USED_ENTITY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Body feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBodyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RestMapping_body_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RestMapping_body_feature",
+								"_UI_RestMapping_type"),
+						MmPackage.Literals.REST_MAPPING__BODY, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -125,10 +159,9 @@ public class MappingTypeItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		Cascade labelValue = ((MappingType) object).getCascade();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_MappingType_type")
-				: getString("_UI_MappingType_type") + " " + label;
+		String label = ((RestMapping) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_RestMapping_type")
+				: getString("_UI_RestMapping_type") + " " + label;
 	}
 
 	/**
@@ -157,8 +190,10 @@ public class MappingTypeItemProvider extends ItemProviderAdapter
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(MappingType.class)) {
-		case MmPackage.MAPPING_TYPE__CASCADE:
+		switch (notification.getFeatureID(RestMapping.class)) {
+		case MmPackage.REST_MAPPING__PATH:
+		case MmPackage.REST_MAPPING__NAME:
+		case MmPackage.REST_MAPPING__BODY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
