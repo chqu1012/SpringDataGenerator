@@ -91,13 +91,13 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated spring -->
+      <!-- @generated not spring -->
       <editor
             id="de.dc.spring.mm.presentation.MmEditorID"
             name="%_UI_MmEditor_label"
             icon="icons/full/obj16/MmModelFile.gif"
             extensions="spring"
-            class="de.dc.spring.mm.presentation.MmEditor"
+            class="de.dc.spring.mm.editor.presentation.SpringEditor"
             contributorClass="de.dc.spring.mm.presentation.MmActionBarContributor">
       </editor>
    </extension>
