@@ -102,4 +102,43 @@
       </editor>
    </extension>
 
+	<extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <menu
+               label="DC Spring Tools">
+            <command
+                  commandId="de.dc.spring.mm.editor.GenerateSpringClassCommand"
+                  label="Generate Spring Classes"
+                  style="push">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="spring">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.dc.spring.mm.editor.command.GenerateSpringClassHandler"
+            id="de.dc.spring.mm.editor.GenerateSpringClassCommand"
+            name="Generate Spring Classes">
+      </command>
+   </extension>
 </plugin>
